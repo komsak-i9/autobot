@@ -27,7 +27,7 @@
                 // Get replyToken
                 $replyToken = $event['replyToken'];
                 // Reply Token
-                $respMessage = 'Hello, your message is '.$events['message']['text'];
+                $respMessage = 'Hello, your message is '.$event['message']['text'];
 
                 $httpClient = new CurlHTTPClient($channel_token);
                 $bot = new LINEBot($httpClient,array('channelSecret'=>$channel_secret));
