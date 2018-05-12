@@ -33,10 +33,10 @@
                 //     $textMessageBuilder = new TextMessageBuilder($respMessage);
                 //     $response = $bot->replyMessage($replyToken,$textMessageBuilder);
                     break;
-                // case 'image' :
-                //     $messageID = $event['message']['id'];
-                //     $respMessage = 'Hello Your image ID is '.$messageID;
-                //     break;
+                case 'image' :
+                    $messageID = $event['message']['id'];
+                    $respMessage = 'Hello Your image ID is '.$messageID;
+                    break;
                 // default : 
                 //     $respMessage = 'Please send text or image only';
                 //     break;                  
