@@ -33,13 +33,13 @@
                 //     $textMessageBuilder = new TextMessageBuilder($respMessage);
                 //     $response = $bot->replyMessage($replyToken,$textMessageBuilder);
                     break;
-                case 'image' :
-                    $messageID = $event['message']['id'];
-                    $respMessage = 'Hello Your image ID is '.$messageID;
-                    break;
-                // default : 
-                //     $respMessage = 'Please send text or image only';
-                //     break;                  
+                // case 'image' :
+                //     $messageID = $event['message']['id'];
+                //     $respMessage = 'Hello Your image ID is '.$messageID;
+                //     break;
+                default : 
+                    $respMessage = 'Please send text or image only';
+                    break;                  
               }              
               $httpClient = new CurlHTTPClient($channel_token);
               $bot = new LINEBot($httpClient,array('channelSecret'=>$channel_secret));
