@@ -23,23 +23,23 @@
            // Line API send a lot of event type, we interested in message only
            if($event['type']=='message'){
               switch($event['message']['type']){
-                // case 'text' :
-                //     // Get replyToken
-                //     $replyToken = $event['replyToken'];
-                //     // Reply Token
-                //     $respMessage = 'Hello, your message is '.$event['message']['text'];
-                // //     $httpClient = new CurlHTTPClient($channel_token);
-                // //     $bot = new LINEBot($httpClient,array('channelSecret'=>$channel_secret));
-                // //     $textMessageBuilder = new TextMessageBuilder($respMessage);
-                // //     $response = $bot->replyMessage($replyToken,$textMessageBuilder);
-                //     break;
-                case 'image' :
-                    $messageID = $event['message']['id'];
-                    $respMessage = 'Hello !! Your image ID is '.$messageID;
+                case 'text' :
+                    // Get replyToken
+                    $replyToken = $event['replyToken'];
+                    // Reply Token
+                    $respMessage = 'Hello, your message is '.$event['message']['text'];
+                //     $httpClient = new CurlHTTPClient($channel_token);
+                //     $bot = new LINEBot($httpClient,array('channelSecret'=>$channel_secret));
+                //     $textMessageBuilder = new TextMessageBuilder($respMessage);
+                //     $response = $bot->replyMessage($replyToken,$textMessageBuilder);
                     break;
-                default : 
-                    $respMessage = 'Please send text or image only';
-                    break;                  
+                // case 'image' :
+                //     $messageID = $event['message']['id'];
+                //     $respMessage = 'Hello Your image ID is '.$messageID;
+                //     break;
+                // default : 
+                //     $respMessage = 'Please send text or image only';
+                //     break;                  
               }              
               $httpClient = new CurlHTTPClient($channel_token);
               $bot = new LINEBot($httpClient,array('channelSecret'=>$channel_secret));
