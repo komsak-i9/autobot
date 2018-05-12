@@ -24,17 +24,28 @@
            if($event['type']=='message'){
               switch($event['message']['type']){
                 case 'text' :
-                // Get replyToken
-                $replyToken = $event['replyToken'];
-                // Reply Token
-                $respMessage = 'Hello, your message is '.$event['message']['text'];
+                    // Get replyToken
+                    $replyToken = $event['replyToken'];
+                    // Reply Token
+                    $respMessage = 'Hello, your message is '.$event['message']['text'];
 
-                $httpClient = new CurlHTTPClient($channel_token);
-                $bot = new LINEBot($httpClient,array('channelSecret'=>$channel_secret));
-                $textMessageBuilder = new TextMessageBuilder($respMessage);
-                $response = $bot->replyMessage($replyToken,$textMessageBuilder);
-                break;
-              }
+                //     $httpClient = new CurlHTTPClient($channel_token);
+                //     $bot = new LINEBot($httpClient,array('channelSecret'=>$channel_secret));
+                //     $textMessageBuilder = new TextMessageBuilder($respMessage);
+                //     $response = $bot->replyMessage($replyToken,$textMessageBuilder);
+                    break;
+                case 'image' :
+                    $messageID = $event['message']['id'];
+                    $respMessage = 'Hello !! Your image ID is '.$messageID;
+                    break;
+                default : 
+                    $respMessage = 'Please send image only';
+                    break;                  
+              }              
+              $httpClient = new CurlHTTPClient($channel_token);
+              $bot = new LINEBot($httpClient,array('channelSecret'=>$channel_secret));
+              $textMessageBuilder = new TextMessageBuilder($respMessage);
+              $response = $bot->replyMessage($replyToken,$textMessageBuilder);
            }
 
        }
