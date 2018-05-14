@@ -24,6 +24,10 @@
            if($event['type']=='message'){
               switch($event['message']['type'])
               {
+                case 'sticker':
+                    $messageID = $event['message']['packageId'];
+                    //Reply Message
+                    $respMessage = 'Hello , your Sticker Package ID is '.$messageID;  
                 case 'image' :
                     $messageID = $event['message']['id'];
                     $respMessage = 'Hello Your image ID is '.$messageID;
@@ -35,7 +39,7 @@
                     $respMessage = 'Hello, your message is '.$event['message']['text'];            
                     break;               
                 default : 
-                    $respMessage = 'Please Send text or image only';
+                    $respMessage = 'Please Send text or image or sticker only';
                     break;                  
               }              
               $httpClient = new CurlHTTPClient($channel_token);
