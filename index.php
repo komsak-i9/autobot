@@ -37,7 +37,8 @@
                    $file = fopen($fileName,'w');
                    fwrite($file,$response->getRawBody());
                    //Reply Message
-                   $respMessage = 'Hello , your audio ID is'.$messageID;
+                   //$respMessage = 'Hello , your audio ID is'.$messageID;
+                   $respMessage = 'Hello , your audio ID is';
                    break;
                 // case 'video' :
                 //     $messageID = $event['message']['id'];                    
