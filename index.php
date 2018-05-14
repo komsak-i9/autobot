@@ -36,21 +36,22 @@
                     fwrite($file,$response->getRawBody());
                     //Reply Message
                     $respMessage = 'Hello, Your video is '.$messageID; 
-                case 'sticker':  // not pass
-                    $messageID = $event['message']['packageId'];
-                    //Reply Message
-                    $respMessage = 'Hello , your Sticker Package ID is '.$messageID;  
                     break;
-                case 'image' :  // not pass
-                    $messageID = $event['message']['id'];
-                    $respMessage = 'Hello Your image ID is '.$messageID;
-                    break;  
-                case 'text' :
-                    // Get replyToken
-                    $replyToken = $event['replyToken'];
-                    // Reply Token
-                    $respMessage = 'Hello, your message is '.$event['message']['text'];            
-                    break;               
+                // case 'sticker':  // not pass
+                //     $messageID = $event['message']['packageId'];
+                //     //Reply Message
+                //     $respMessage = 'Hello , your Sticker Package ID is '.$messageID;  
+                //     break;
+                // case 'image' :  // not pass
+                //     $messageID = $event['message']['id'];
+                //     $respMessage = 'Hello Your image ID is '.$messageID;
+                //     break;  
+                // case 'text' :
+                //     // Get replyToken
+                //     $replyToken = $event['replyToken'];
+                //     // Reply Token
+                //     $respMessage = 'Hello, your message is '.$event['message']['text'];            
+                //     break;               
                 default : 
                     $respMessage = 'Please Send text or image or sticker or video only';
                     break;                  
