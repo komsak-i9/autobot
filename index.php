@@ -24,16 +24,16 @@
            if($event['type']=='message'){
               switch($event['message']['type'])
               {
+                case 'image' :
+                    $messageID = $event['message']['id'];
+                    $respMessage = 'Hello Your image ID is '.$messageID;
+                    break;  
                 case 'text' :
                     // Get replyToken
                     $replyToken = $event['replyToken'];
                     // Reply Token
                     $respMessage = 'Hello, your message is '.$event['message']['text'];            
-                    break;
-                case 'image' :
-                    $messageID = $event['message']['id'];
-                    $respMessage = 'Hello Your image ID is '.$messageID;
-                    break;
+                    break;               
                 default : 
                     $respMessage = 'Please Send text or image only';
                     break;                  
