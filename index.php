@@ -22,6 +22,8 @@
        foreach($events['events'] as $event){
            // Line API send a lot of event type, we interested in message only
            if($event['type']=='message'){
+              $httpClient = new CurlHTTPClient($channel_token);
+              $bot = new LINEBot($httpClient,array('channelSecret'=>$channel_secret)); 
               switch($event['message']['type'])
               {
                 case 'video' :
@@ -53,8 +55,7 @@
                     $respMessage = 'Please Send text or image or sticker or video only';
                     break;                  
               }              
-              $httpClient = new CurlHTTPClient($channel_token);
-              $bot = new LINEBot($httpClient,array('channelSecret'=>$channel_secret));
+              
               $textMessageBuilder = new TextMessageBuilder($respMessage);
               $response = $bot->replyMessage($replyToken,$textMessageBuilder);
            }
