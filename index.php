@@ -28,6 +28,7 @@
                     $messageID = $event['message']['packageId'];
                     //Reply Message
                     $respMessage = 'Hello , your Sticker Package ID is '.$messageID;  
+                    break;
                 case 'image' :
                     $messageID = $event['message']['id'];
                     $respMessage = 'Hello Your image ID is '.$messageID;
