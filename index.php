@@ -2,7 +2,7 @@
    // Edit by i9 
    // change echo "Hello World" to echo phpinfo()
    // echo phpinfo();
-   require_once('./vendor/autoload.php');
+   require_once('../vendor/autoload.php');
 
    //Namespace
 
