@@ -24,48 +24,51 @@
        // Loop through each event
        foreach($events['events'] as $event){
            // Line API send a lot of event type, we interested in message only
-           if($event['type']=='message'){
-              
+           if($event['type']=='message'){              
+              // Get replyToken
+              $replyToken = $event['replyToken'];
               switch($event['message']['type'])
               {
-                  case 'audio' :
-                   $messageID = $event['message']['id'];
-                   // Create audio file on server
-                   $fileID =  $event['message']['id'];
-                   $response = $bot->getMessageContent($fileID);
-                   $fileName = 'linebot.m4a';
-                   $file = fopen($fileName,'w');
-                   fwrite($file,$response->getRawBody());
-                   //Reply Message
-                   //$respMessage = 'Hello , your audio ID is'.$messageID;
-                   $respMessage = 'Hello , your audio ID is';
-                   break;
-                // case 'video' :
-                //     $messageID = $event['message']['id'];                    
-                //     // Create video file on Server
-                //     $fileID = $event['message']['id'];  
-                //     $response = $bot->getMessageContent($fileID);
-                //     $fileName = 'linebot.mp4';
-                //     $file = fopen($fileName,'w');
-                //     fwrite($file,$response->getRawBody());
-                //     //Reply Message
-                //     $respMessage = 'Hello, Your video is '.$messageID; 
-                //     break;
-                // case 'sticker':  // not pass
-                //     $messageID = $event['message']['packageId'];
-                //     //Reply Message
-                //     $respMessage = 'Hello , your Sticker Package ID is '.$messageID;  
-                //     break;
-                // case 'image' :  // not pass
-                //     $messageID = $event['message']['id'];
-                //     $respMessage = 'Hello Your image ID is '.$messageID;
-                //     break;  
-                // case 'text' :
-                //     // Get replyToken
-                //     $replyToken = $event['replyToken'];
-                //     // Reply Token
-                //     $respMessage = 'Hello, your message is '.$event['message']['text'];            
-                //     break;               
+                case 'location' : 
+                    $address = $event['message']['address'];
+                    //Reply Message
+                    $respMessage = 'Hello , Your Address is '.$address;
+                    break;
+                case 'audio' :
+                    $messageID = $event['message']['id'];
+                    // Create audio file on server
+                    $fileID =  $event['message']['id'];
+                    $response = $bot->getMessageContent($fileID);
+                    $fileName = 'linebot.m4a';
+                    $file = fopen($fileName,'w');
+                    fwrite($file,$response->getRawBody());
+                    //Reply Message
+                    $respMessage = 'Hello , your audio ID is'.$messageID;                   
+                    break;
+                case 'video' :
+                    $messageID = $event['message']['id'];                    
+                    // Create video file on Server
+                    $fileID = $event['message']['id'];  
+                    $response = $bot->getMessageContent($fileID);
+                    $fileName = 'linebot.mp4';
+                    $file = fopen($fileName,'w');
+                    fwrite($file,$response->getRawBody());
+                    //Reply Message
+                    $respMessage = 'Hello, Your video is '.$messageID; 
+                    break;
+                case 'sticker':  // not pass
+                    $messageID = $event['message']['packageId'];
+                    //Reply Message
+                    $respMessage = 'Hello , your Sticker Package ID is '.$messageID;  
+                    break;
+                case 'image' :  // not pass
+                    $messageID = $event['message']['id'];
+                    $respMessage = 'Hello Your image ID is '.$messageID;
+                    break;  
+                case 'text' :                    
+                    // Reply Token
+                    $respMessage = 'Hello, your message is '.$event['message']['text'];            
+                    break;               
                 default : 
                     $respMessage = 'Please Send text or image or sticker or video only';
                     break;                  
