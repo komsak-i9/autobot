@@ -33,10 +33,10 @@
               switch(strtolower($ask))
               {
                  case 'm' :
-                   $respMessage = '<a href="https://www.w3schools.com">click w3cschool.com</a>';
+                   $respMessage = 'https://www.w3schools.com';
                    break;
                  case 'f' :
-                   $respMessage = '<a href="https://www.google.com">click google.com</a>';
+                   $respMessage = 'https://www.google.com';
                    break;
                  default : 
                    $respMessage = 'What is your sex ? M or F';
