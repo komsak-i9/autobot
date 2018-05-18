@@ -32,14 +32,29 @@
 
               switch(strtolower($ask))
               {
-                 case 'm' :
-                   $respMessage = 'https://www.w3schools.com';
-                   break;
                  case 'f' :
+                   $respMessage = 'https://www.facebook.com';
+                   break;
+                 case 'g' :
                    $respMessage = 'https://www.google.com';
                    break;
+                 case 'i' :
+                   $respMessage = 'https://www.instagram.com';
+                   break;  
+                 case 't' :
+                   $respMessage = 'https://twitter.com';
+                   break;
+                 case 'y' : 
+                   $respMessage = 'https://www.youtube.com';
+                   break; 
                  default : 
-                   $respMessage = 'What is your sex ? M or F';
+                   $respMessage = 'What is your website to visit 
+                                   f = facebook
+                                   g = goole
+                                   i = instragram
+                                   t = twitter
+                                   y = youtube 
+                                  ';
               }
 
             //   switch($event['message']['type'])
