@@ -28,28 +28,32 @@
               
             // Get replyToken
               $replyToken = $event['replyToken'];
-              $ask = $event['message']['text'];
+            // reply Image to Line API
+              $originalContentUrl = 'https://cdn.shopify.com/s/files/1/1217/6360/products/Shinkansen_Tokaido_ShinFuji_001_1e44e709-ea47-41ac-91e4-89b2b5eb193a_grande.jpg?v=1489641827';     
+              $previewImageUrl = 'https://cdn.shopify.com/s/files/1/1217/6360/products/Shinkansen_Tokaido_ShinFuji_001_1e44e709-ea47-41ac-91e4-89b2b5eb193a_grande.jpg?v=1489641827'; 
+            // reply Message to Line API  
+              // $ask = $event['message']['text'];
 
-              switch(strtolower($ask))
-              {
-                 case 'f' :
-                   $respMessage = 'https://www.facebook.com';
-                   break;
-                 case 'g' :
-                   $respMessage = 'https://www.google.com';
-                   break;
-                 case 'i' :
-                   $respMessage = 'https://www.instagram.com';
-                   break;  
-                 case 't' :
-                   $respMessage = 'https://www.twitter.com';
-                   break;
-                 case 'y' : 
-                   $respMessage = 'https://www.youtube.com';
-                   break; 
-                 default : 
-                   $respMessage = 'What is your website to visit f = facebook; g = google; i = instragram; t = twitter; y = youtube';
-              }
+              // switch(strtolower($ask))
+              // {
+              //    case 'f' :
+              //      $respMessage = 'https://www.facebook.com';
+              //      break;
+              //    case 'g' :
+              //      $respMessage = 'https://www.google.com';
+              //      break;
+              //    case 'i' :
+              //      $respMessage = 'https://www.instagram.com';
+              //      break;  
+              //    case 't' :
+              //      $respMessage = 'https://www.twitter.com';
+              //      break;
+              //    case 'y' : 
+              //      $respMessage = 'https://www.youtube.com';
+              //      break; 
+              //    default : 
+              //      $respMessage = 'What is your website to visit f = facebook; g = google; i = instragram; t = twitter; y = youtube';
+              // }
 
             //   switch($event['message']['type'])
             //   {
@@ -98,8 +102,12 @@
             //         break;                  
             //   }              
               
-              $textMessageBuilder = new TextMessageBuilder($respMessage);
-              $response = $bot->replyMessage($replyToken,$textMessageBuilder);
+              // $textMessageBuilder = new TextMessageBuilder($respMessage);
+              
+              // reply Image to  Line API
+              $textMessageBuilder = new ImageMessageBuilder($respMessage); 
+
+              $response = $bot->replyMessage($replyToken,$textMessageBuilder);              
            }
 
        }
