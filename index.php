@@ -106,7 +106,7 @@
               // $textMessageBuilder = new TextMessageBuilder($respMessage);
               
               // reply Image to  Line API
-              $textMessageBuilder = new ImageMessageBuilder($respMessage); 
+              $textMessageBuilder = new ImageMessageBuilder($originalContentUrl,$previewImageUrl); 
               $response = $bot->replyMessage($replyToken,$textMessageBuilder);              
            }
 
