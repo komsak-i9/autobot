@@ -8,7 +8,8 @@
 
    use \LINE\LINEBot\HTTPClient\CurlHTTPClient;
    use \LINE\LINEBot;
-   use \LINE\LINEBot\MessageBuilder\TextMessageBuilder;
+  //  use \LINE\LINEBot\MessageBuilder\TextMessageBuilder;
+   use \LINE\LINEBot\MessageBuilder\ImageMessageBuilder; 
 
    $channel_token = 'WuQLwcvhUG82GtQK5belpZQJBJuBNR+G1JGGEoLbZjPWMiWMDOOysJRIveqGsW0YjuAPsXHJb0mnOpCs5IHmGG5pm4OSuGlGVIW7329WWnrA6zWyV5pbeFXdAZjeKjmwoCPWr+yZo8mbJE3mZ2IV/QdB04t89/1O/w1cDnyilFU=';
    $channel_secret = 'e6190998d06ed34a6540c014d384d350';
@@ -106,7 +107,6 @@
               
               // reply Image to  Line API
               $textMessageBuilder = new ImageMessageBuilder($respMessage); 
-
               $response = $bot->replyMessage($replyToken,$textMessageBuilder);              
            }
 
