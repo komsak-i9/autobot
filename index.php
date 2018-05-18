@@ -42,13 +42,13 @@
                    $respMessage = 'https://www.instagram.com';
                    break;  
                  case 't' :
-                   $respMessage = 'https://twitter.com';
+                   $respMessage = 'https://www.twitter.com';
                    break;
                  case 'y' : 
                    $respMessage = 'https://www.youtube.com';
                    break; 
                  default : 
-                   $respMessage = 'What is your website to visit<br>f = facebook <br>g = goole <br>i = instragram <br>t = twitter <br>y = youtube <br>';
+                   $respMessage = 'What is your website to visit f = facebook; g = google; i = instragram; t = twitter; y = youtube';
               }
 
             //   switch($event['message']['type'])
