@@ -104,10 +104,11 @@
             //   }              
               
               // $textMessageBuilder = new TextMessageBuilder($respMessage);
-              
+              // $response = $bot->replyMessage($replyToken,$textMessageBuilder);  
               // reply Image to  Line API
               $textMessageBuilder = new ImageMessageBuilder($originalContentUrl,$previewImageUrl); 
-              $response = $bot->replyMessage($replyToken,$textMessageBuilder);              
+              $response = $bot->replyMessage($replyToken,$textMessageBuilder);
+                          
            }
 
        }
