@@ -48,13 +48,7 @@
                    $respMessage = 'https://www.youtube.com';
                    break; 
                  default : 
-                   $respMessage = 'What is your website to visit 
-                                   f = facebook
-                                   g = goole
-                                   i = instragram
-                                   t = twitter
-                                   y = youtube 
-                                  ';
+                   $respMessage = 'What is your website to visit<br>f = facebook <br>g = goole <br>i = instragram <br>t = twitter <br>y = youtube <br>';
               }
 
             //   switch($event['message']['type'])
