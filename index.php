@@ -24,7 +24,7 @@
 
         //Sticker
         $packageId = 1;
-        $stickerId = 410;
+        $stickerId = 618;
 
         $textMessageBuilder = new StickerMessageBuilder($packageId,$stickerId);
         $response = $bot->replyMessage($replyToken,$textMessageBuilder);
