@@ -33,5 +33,5 @@
           $response = $bot->replyMessage($replyToken,$vdoMessageBuilder);
      }
   }
-  echo 'OK';
+  echo 'OK3';
 ?> 
